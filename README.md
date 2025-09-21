@@ -94,8 +94,8 @@ Este es totalmente obligatorio para un comando, si no el paquete no funcionara
 
 Ejemplo:
 
-```js
-const { CommandBuilder } = require("advanced-cmd");
+```ts
+import { CommandBuilder } from "@dark-actions/advanced-cmd";
 
 const command = new CommandBuilder();
 command.setName("ping");
@@ -109,8 +109,8 @@ Este también es totalmente obligatorio para un comando, si no el paquete no fun
 
 Ejemplo:
 
-```js
-const { CommandBuilder } = require("advanced-cmd");
+```ts
+import { CommandBuilder } from "@dark-actions/advanced-cmd";
 
 const command = new CommandBuilder();
 command.setDescription("Ve mi ping en ws");
@@ -128,8 +128,8 @@ interaction es equivalente a CommandInteraction de `discord.js`, este tiene unos
 
 Ejemplo:
 
-```js
-const { CommandBuilder } = require("advanced-cmd");
+```ts
+import { CommandBuilder } from "@dark-actions/advanced-cmd";
 
 const command = new CommandBuilder();
 command.setExecute(function (client, interaction) {
@@ -145,8 +145,8 @@ Si se tiene alguna duda sobre los métodos, pronto se publicara en el paquete lo
 
 Ejemplo:
 
-```js
-const { CommandBuilder } = require("advanced-cmd");
+```ts
+import { CommandBuilder } from "@dark-actions/advanced-cmd";
 
 const command = new CommandBuilder();
 command.addStringOption({ name: "text", description: "A text" });
@@ -160,8 +160,8 @@ Hay una opción que no es obligatoria y es `required` y sirve para establecer si
 
 Ejemplo:
 
-```js
-const { CommandBuilder } = require("advanced-cmd");
+```ts
+import { CommandBuilder } from "@dark-actions/advanced-cmd";
 
 const command = new CommandBuilder();
 command.addUserOption({ name: "user", description: "A user" });
@@ -175,8 +175,8 @@ La única opción no obligatoria es `required` que sirve para establecer si la o
 
 Ejemplo:
 
-```js
-const { CommandBuilder } = require("advanced-cmd");
+```ts
+import { CommandBuilder } from "@dark-actions/advanced-cmd";
 
 const command = new CommandBuilder();
 command.addRoleOption({ name: "role", description: "A role" });
@@ -190,8 +190,8 @@ La única opción no obligatoria es `required` que sirve para establecer si la o
 
 Ejemplo:
 
-```js
-const { CommandBuilder } = require("advanced-cmd");
+```ts
+import { CommandBuilder } from "@dark-actions/advanced-cmd";
 
 const command = new CommandBuilder();
 command.addChannelOption({ name: "channel", description: "A channel" });
@@ -209,8 +209,8 @@ Un ejemplo es que si el número de index es 1 (segundo elemento) en el array de 
 
 Ejemplo:
 
-```js
-const { CommandBuilder } = require("advanced-cmd");
+```ts
+import { CommandBuilder } from "@dark-actions/advanced-cmd";
 
 const command = new CommandBuilder();
 command.setName("view_file");
@@ -237,8 +237,8 @@ Esto significa que el número que se debe introducir debe ser entero
 
 Ejemplo:
 
-```js
-const { CommandBuilder } = require("advanced-cmd");
+```ts
+import { CommandBuilder } from "@dark-actions/advanced-cmd";
 
 const command = new CommandBuilder();
 command.addIntegerOption({ name: "integer", description: "El entero" });
@@ -256,8 +256,8 @@ Esto significa que el valor que se debe introducir es `true` o `false` (tanto en
 
 Ejemplo:
 
-```js
-const { CommandBuilder } = require("advanced-cmd");
+```ts
+import { CommandBuilder } from "@dark-actions/advanced-cmd";
 
 const command = new CommandBuilder();
 command.addBooleanOption({ name: "boolean", description: "El boolean" });
@@ -273,8 +273,8 @@ Esto significa que hará que el comando solo se ejecute en interacción o en men
 
 Ejemplo:
 
-```js
-const { CommandBuilder, CommandType } = require("advanced-cmd");
+```ts
+import { CommandBuilder, CommandType } from "@dark-actions/advanced-cmd";
 
 const command = new CommandBuilder();
 command.isolate(CommandType.Message);
@@ -292,8 +292,8 @@ No se recomienda utilizar, ya que está deprecado.
 
 Ejemplo:
 
-```js
-const { CommandBuilder } = require("advanced-cmd");
+```ts
+import { CommandBuilder } from "@dark-actions/advanced-cmd";
 
 const command = new CommandBuilder();
 command.verify();
@@ -305,8 +305,8 @@ command.verify();
 
 Ejemplo:
 
-```js
-const { CommandBuilder } = require("advanced-cmd");
+```ts
+import { CommandBuilder } from "@dark-actions/advanced-cmd";
 
 const command = new CommandBuilder();
 command.toJSON();
@@ -331,10 +331,10 @@ Opciones (obligatorias):
 Ejemplo:
 
 ```js
-const { Client } = require("discord.js");
+import { Client } from "discord.js";
+import { config } from "@dark-actions/advanced-cmd";
 const client = new Client({ intents: 3276799 });
 client.login("TOKEN");
-const { config } = require("advanced-cmd");
 
 config({ client: client, directory: "Comandos", prefix: "!" });
 ```
@@ -349,11 +349,11 @@ Opciones:
 
 Ejemplo:
 
-```js
-const { Client } = require("discord.js");
+```ts
+import { Client } from "discord.js";
+import { config, reload } from "@dark-actions/advanced-cmd";
 const client = new Client({ intents: 3276799 });
 client.login("TOKEN");
-const { config, reload } = require("advanced-cmd");
 
 config({ client: client, directory: "Comandos", prefix: "!" });
 

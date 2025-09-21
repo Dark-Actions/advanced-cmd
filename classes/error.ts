@@ -2,7 +2,7 @@ export class commanderError extends Error {
 	constructor(message: string) {
 		super(message);
 
-		this.name = "[ADVANCED-CMD ERROR]";
+		this.name = "[@dark-actions/advanced-cmd] error";
 	}
 }
 
